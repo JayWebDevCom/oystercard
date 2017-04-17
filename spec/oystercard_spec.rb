@@ -10,20 +10,16 @@ describe Oystercard do
         expect(oystercard.balance).to eq described_class::DEFAULT_BALANCE
       end
 
-      it 'has default status of unused' do
-        expect(oystercard.status).to eq :unused
-      end
-
   end
 
-  describe 'deduct' do
+  describe '#deduct' do
     it 'should reduce balance' do
       oystercard.top_up(40)
       expect{ oystercard.deduct 10}.to change{ oystercard.balance }.by -10
     end
   end
 
-  describe 'Top Up' do
+  describe '#top_up' do
 
     it 'should increase balance' do
       expect{ oystercard.top_up 10}.to change{ oystercard.balance }.by +10
@@ -42,15 +38,6 @@ describe Oystercard do
        oystercard.top_up(Oystercard::MINIMUM_BALANCE)
     end
 
-    it 'updates status to :in_use' do
-      oystercard.touch_in
-      expect(oystercard.status).to eq :in_use
-    end
-
-    it 'updates status to :not_in_use' do
-      oystercard.touch_out
-      expect(oystercard.status).to eq :not_in_use
-    end
 
 
   end
@@ -64,15 +51,15 @@ describe Oystercard do
 
   end
 
-  describe 'journey?' do
+  describe '#journey?' do
 
-    it 'returns true when card status is :in_use' do
+    it 'true when card in touched in' do
       oystercard.top_up(5)
       oystercard.touch_in
       expect(oystercard).to be_in_journey
     end
 
-    it 'returns false when card status is :not_in_use' do
+    it 'false when touched out' do
       oystercard.touch_out
       expect(oystercard).not_to be_in_journey
     end
