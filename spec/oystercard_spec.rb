@@ -12,12 +12,17 @@ describe Oystercard do
 
   end
 
+  describe 'deduct' do
+    it 'should reduce balance' do
+      oystercard.top_up(40)
+      expect{ oystercard.deduct 10}.to change{ oystercard.balance }.by -10
+    end
+  end
 
   describe 'Top Up' do
 
-    it 'changes balance' do
-      oystercard.top_up(20)
-      expect(oystercard.balance).to eq 20
+    it 'should increase balance' do
+      expect{ oystercard.top_up 10}.to change{ oystercard.balance }.by +10
     end
 
     it 'can not exceed balance limit' do
