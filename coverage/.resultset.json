@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Jaiye/Documents/Sites/Ruby/precourse/Projects/oystercard/spec/oystercard_spec.rb": [
+      "/Users/slaimanahmadshah/Projects/oystercard/spec/oystercard_spec.rb": [
         1,
         null,
         1,
@@ -99,7 +99,7 @@
         null,
         null
       ],
-      "/Users/Jaiye/Documents/Sites/Ruby/precourse/Projects/oystercard/lib/oystercard.rb": [
+      "/Users/slaimanahmadshah/Projects/oystercard/lib/oystercard.rb": [
         1,
         1,
         1,
@@ -141,8 +141,38 @@
         5,
         null,
         null
+      ],
+      "/Users/slaimanahmadshah/Projects/oystercard/spec/station_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        3,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/slaimanahmadshah/Projects/oystercard/lib/station.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1492456444
+    "timestamp": 1492459043
   }
 }
