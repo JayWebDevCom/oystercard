@@ -12,13 +12,6 @@ describe Oystercard do
 
   end
 
-  describe '#deduct' do
-    it 'should reduce balance' do
-      oystercard.top_up(40)
-      expect{ oystercard.deduct 10}.to change{ oystercard.balance }.by -10
-    end
-  end
-
   describe '#top_up' do
 
     it 'should increase balance' do
@@ -38,7 +31,9 @@ describe Oystercard do
        oystercard.top_up(Oystercard::MINIMUM_BALANCE)
     end
 
-
+    it 'touching out deducts minimum fare' do
+      expect{ oystercard.touch_out }.to change{ oystercard.balance }.by -Oystercard::MINIMUM_BALANCE
+    end
 
   end
 
